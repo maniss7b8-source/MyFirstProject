@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 5px;
+        }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: black;
+    }
+    #clock{
+        font-size: 80px;
+    }
+    </style>
+</head>
+<body>
+    <h1 style="color: white;">CLOCK</h1>
+    <h1 id="clock">00:00:00</h1>
+<script>
+    function change(){
+        let date=new Date();
+        let h=date.getHours();
+        let m=date.getMinutes();
+        let s=date.getSeconds();
+
+        h=h<10?"0"+h:h;
+        m=m<10?"0"+m:m;
+        s=s<10?"0"+s:s;
+
+        document.getElementById("clock").textContent=(h+":"+m+":"+s)
+
+        let hexa="#"+Math.floor(Math.random()*12345679).toString(16);
+        document.getElementById("clock").style.color=hexa;
+    }
+    setInterval(change,1000);
+    change();
+</script>
+</body>
+</html>

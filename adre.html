@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color: white;
+            margin: 0px;
+        }
+        body{
+            background-color: black;
+            text-align: center;
+            height: 700px;
+        }
+        h1{
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+        input{
+            width: 500px;
+            padding: 10px;
+            outline: none;
+            color: black;
+            font-size: 20px;
+            margin: 0%;
+        }
+
+        #btn{
+            width: 100px;
+            padding: 12px;
+            font-size: 20px;
+            margin: 0px;
+            border: none;
+            background-color: rgb(20, 243, 20);
+        }
+                #btn1{
+            width: 100px;
+            padding: 12px;
+            border: none;
+            font-size: 20px;
+            margin: 0px;
+            background-color: rgb(255, 62, 62);
+        }
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            list-style-type: none;
+            height: 600px;
+        }
+        li{
+            display:flex;
+            flex-direction: column;
+            font-size: 25px;
+            width: 200px;
+            margin: 8px;
+            color: black;
+            border: 2px solid black;
+            background-color: white;
+        }
+        button{
+            margin: 10px;
+            padding: 10px;
+            font-size: 18px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Any Value</h1>
+    <input type="text" id="tex" placeholder="Enter Here">
+    <button id="btn">Add</button>
+    <button id="btn1">Clear</button>
+    <ul id="list"></ul>
+
+    <script>
+        let inp=document.getElementById("tex");
+        let btn=document.getElementById("btn");
+        let btn1=document.getElementById("btn1");
+        let list=document.getElementById("list");
+
+        btn.addEventListener("click",()=>{
+            let val=inp.value;
+            let lis= document.createElement("li");//create list
+            let colo="#"+Math.floor(Math.random()*12345678).toString(16);//random color
+            lis.style.backgroundColor=colo;//apply color
+            let del=document.createElement("button");//create button
+            del.textContent="delete";//button value
+            lis.innerHTML=val;//li value
+            list.appendChild(lis);//append li
+            lis.appendChild(del);//append button
+            del.addEventListener("click",()=>{//remove function
+            list.lastChild.remove();
+        })
+
+        });
+
+
+        btn1.addEventListener("click",()=>{
+            list.remove();
+        })
+       
+
+        
+    </script>
+</body>
+</html>

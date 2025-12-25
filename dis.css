@@ -1,0 +1,47 @@
+
+
+h1{
+    margin-left: 38% ;
+    color: blue;
+}
+a{
+    position: relative;
+    left: 160px;
+}
+.a{
+    position: relative;
+    left: 130px;
+    top: 20px;
+}
+
+div{
+    border: 2px solid black;
+    margin-left: 30%;
+    display: inline-block;
+    position: absolute;
+    height: 480px;
+}
+
+form{
+    position: relative;
+}
+
+h2{
+    margin: 0;
+    text-align: center;
+    background-color: pink;
+    padding: 10px;
+}
+
+td{
+    padding: 4px;
+}
+table{
+ padding-left: 30px;
+ margin-top: 10px;
+}
+
+#g:hover{
+    cursor: pointer;
+    color: brown;
+}

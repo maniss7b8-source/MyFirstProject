@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    text-align: center;
+  }
+  li{
+    list-style-type: none;
+    font-size: 25px;
+    margin: 8px;
+  }
+  #int{
+    padding: 10px;
+    width: 250px;
+    font-size: 20px;
+  }
+  button{
+    padding: 13px;
+    background-color: blue;
+    color: white;
+  }
+</style>
+<body>
+  <h1>Employee Name</h1>
+<input id="int" type="text" placeholder="Enter any Name">
+<button id="btn">ADD</button>
+<button id="btn1">REMOVE</button>
+<button id="clear">CLEAR</button>
+<ul id="creli"></ul>
+<script>
+ let int=document.getElementById("int");
+ let add=document.getElementById("btn");
+ let rem=document.getElementById("btn1");
+ let cre=document.getElementById("creli");
+ let clear=document.getElementById("clear").addEventListener("click",()=>{
+  int.value="";
+ })
+
+ add.addEventListener("click",function(){
+  if(int.value.trim() == ""){ 
+    alert("Enter any values")
+    return;
+ }
+
+  let list=document.createElement("li");
+  list.innerHTML=int.value;
+  cre.append(list);
+  int.value="";
+  return;
+
+ list.addEventListener("mouseover",()=>{
+  list.style.color="red";
+ })
+
+ list.addEventListener("mouseout",()=>{
+  list.style.color="black";
+ })
+ })
+
+ rem.addEventListener("click",function(){
+  if(cre.lastChild){
+    cre.removeChild(cre.lastChild)
+  }
+  else{
+    alert("Invalid Values")
+  }
+ })
+
+</script>
+</body>
+</html>

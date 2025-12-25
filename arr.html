@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color:white;
+        }
+        body{
+            background: black;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1{
+            font-size: 70px;
+            margin: 0%;
+        }
+         input{
+            width: 300px;
+            padding: 10px;
+            outline: none;
+            color: black;
+            font-size: 20px;
+            margin: 0%;
+        }
+
+        #btn{
+            width: 100px;
+            padding: 10px;
+            font-size: 20px;
+            margin: 0px;
+            background:linear-gradient(blue);
+        }
+
+        table{
+            width: 500px;
+            margin: 10px;
+            text-align: center;
+            border: 2px solid white;
+        }
+
+        tr{
+            height:auto;
+        }
+
+        th{
+            font-size: 24px;
+            height: 50px;
+        }
+
+        td{
+            font-size: 18px;
+            height: 50px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Add Your Details</h1>
+    <div>
+    <input type="text" id="tex"  placeholder="Enter your Name">
+    <input type="text" id="tex1" placeholder="Enter your Age">
+    <input type="text" id="tex2" placeholder="Enter your City">
+    <button id="btn">Add</button> 
+    </div>
+
+
+    <table id="table" border="1px">
+        <tr> 
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+    </table>
+
+    <script>
+    let tab=document.getElementById("table");
+    let people = [{ name: "Mani", age: 21,city:"Madurai" },{ name: "Tamil", age: 22,city:"Madurai" },{ name: "Bala", age: 20,city:"Theni" }];
+    people.forEach((get)=>{
+        let tr=document.createElement("tr");
+        let td=document.createElement("td");
+        let td1=document.createElement("td");
+        let td2=document.createElement("td");
+        td.textContent=get.name;
+        td1.textContent=get.age;
+        td2.textContent=get.city;
+
+        tab.append(tr);
+        tr.append(td,td1,td2);
+    })
+
+    document.getElementById("btn").addEventListener("click",()=>{
+        let tex=document.getElementById("tex").value;
+        let tex1=document.getElementById("tex1").value;
+        let tex2=document.getElementById("tex2").value;
+
+        if(tex.trim()==="" || tex1.trim()==="" || tex2.trim()==="" ){
+            alert("Enter input Required Value");
+            return;
+        }
+
+        people.push({name:tex,age:tex1,city:tex2})
+
+        let tr=document.createElement("tr");
+        let td=document.createElement("td");
+        let td1=document.createElement("td");
+        let td2=document.createElement("td");
+
+        td.textContent=tex;
+        td1.textContent=tex1;
+        td2.textContent=tex2;
+
+        table.append(tr);
+        tr.append(td,td1,td2);
+
+        document.getElementById("tex").value="";
+        document.getElementById("tex1").value="";
+        document.getElementById("tex2").value="";
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let tab=document.getElementById("table")
+    //     let arr = [{ name: "mani", age: 21,city:"Madurai" }, { name: "tamil", age: 22,city:"Madurai" }, { name: "bala", age: 20,city:"Theni" }];
+    //     for (let i = 0; i < arr.length; i++) {
+    //        let row=document.createElement("tr")
+    //        for(key in arr[i]){
+    //         let data=document.createElement("td")
+    //         data.textContent=arr[i][key];
+    //         row.append(data)
+    //        }
+    //        tab.append(row)
+    //     }
+
+    // let info=["red","yellow","Green"];
+    // let output="";
+    // info.forEach((colo)=>{
+    //     output+=colo;
+    // })
+       
+    // console.log(typeof output);
+
+    // let sum=[20,30,50];
+    // let total="";
+    // sum.forEach((nu)=>{
+    //     total+=nu;
+    // })
+
+    // document.write("Total: "+total)
+
+    // let fruits=["Apple","Banana","Orange"];
+    // fruits.forEach((fru) => {
+    //     console.log("I Like "+fru)
+    // });
+
+    // let numbers = [5, 10, 15, 20];
+    // let tot=0;
+    // numbers.forEach(num =>{
+    //     tot+=num;
+    // })
+
+    // document.write("total "+tot)
+
+    // let table=document.getElementById("table");
+    // let people = [{ name: "Mani", age: 21,city:"Madurai" },{ name: "Tamil", age: 22,city:"Madurai" },{ name: "Bala", age: 20,city:"Theni" }];
+    // people.forEach((val)=>{
+    //     let tr=document.createElement("tr");
+    //     let td1=document.createElement("td");
+    //     let td2=document.createElement("td");
+    //     let td3=document.createElement("td");
+    //     td1.textContent=(val.name);
+    //     td1.textContent=(val.city);
+    //     td2.textContent=(val.age);
+    //     table.append(tr);
+    //     tr.append(td1,td2,td3);
+    // })
+    
+
+    // people.forEach(solo => {
+    // document.write("Name: "+solo.name+", Age: "+solo.age+"<br>"})
+// )
+    </script>
+</body>
+
+</html>

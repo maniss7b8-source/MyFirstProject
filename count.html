@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <style>
+    body{
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    textarea{
+      height: 200px;
+      width: 300px;
+      outline: none;
+      font-size: 18px;
+    }
+    p{
+      font-size: 30px;
+      color: white;
+      margin: 10px;
+    }
+
+    h1{
+      color: red;
+      font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>WORD COUNTER</h1>
+  <textarea name="text" id="text"></textarea>
+  <p id="cochar"></p>
+  <p id="coword"></p>
+  
+  <script>
+    let text = document.getElementById("text");
+    let char = document.getElementById("cochar");
+    let word = document.getElementById("coword");
+
+    text.addEventListener("input", function show() {
+      let vow = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+      let tex = text.value.split("");
+      let ans = [];
+
+      for (let i = 0; i < tex.length; i++) {
+        for (let j = 0; j < vow.length; j++) {
+          if (tex[i] === vow[j]) {
+            ans.push(tex[i]);
+          }
+        }
+      }
+      char.innerHTML = "VOWEL COUNT: " + ans.length;
+      word.innerHTML="CONSTANT VALUE: " + (Number(tex.length)-Number(ans.length))
+    });
+  </script>
+</body>
+</html>
