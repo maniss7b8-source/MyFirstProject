@@ -1,0 +1,418 @@
+.slabo-27px-regular {
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Slabo 27px", serif;
+}
+body{
+    position: relative;
+    min-height: 600px;
+    background-color: rgb(6, 16, 39) !important;
+}
+
+#home, #About, #skill,#project {
+    scroll-margin-top: 120px;
+}
+
+header{
+     background-color: rgb(6, 16, 39) !important;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+}
+
+
+.brand{
+    font-size: 40px !important;
+    font-weight: bold;
+    margin-left: 10px;
+    color: aquamarine;
+}
+
+#navbarNav{
+    height: 80px;
+    transition: all 0.1s ease-in;
+}
+
+#navbarNav ul{
+    width: 50%;
+    display: flex !important;
+    justify-content:space-around ;
+    align-items: center;
+    margin-left: auto;
+}
+
+#navbarNav li a{
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    display: inline-block;
+    transition: all 0s ease-in-out;
+}
+
+#navbarNav li{
+    width:50px;
+}
+
+
+#navbarNav li a:hover{
+    font-size: 20px;
+    color: white;
+}
+
+/* #navbarNav li:hover{
+    padding: 0px;
+    margin: 0px;
+} */
+
+@media (max-width:576px){
+    #navbarNav li a:hover{
+    font-size: 18px;
+    color: rgb(24, 223, 209);
+    }
+    #navbarNav li a::before{
+        content: '';
+    }
+    #navbarNav li a:hover::before{
+        padding: 5px;
+    }
+    
+    #navbarNav{
+    height:200px;
+    }
+    #navbarNav ul{
+        margin-left: 10px;
+    }
+}
+
+
+
+
+@media (max-width:768px){
+    #navbarNav ul{
+        width: 100%;
+        height: 100%;
+    }
+    #navbarNav li{
+    width:100%;
+}
+}
+
+
+.sec{
+      /* height: 100%; */
+      /* margin-top: 200px; */
+      height: 80vh;
+      position: relative;
+      top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+
+@media(max-width:768px){
+    .sec{
+        margin-top: 30px;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+@media(max-width:768px){
+    .sec{
+    margin-top: 100px;
+}}
+
+
+.center{
+   max-width:700px;
+    color: white;
+}
+
+.center h1{
+font-size: 70px;
+margin-bottom: 10px;
+}
+
+.center h4{
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(24, 223, 209);
+}
+
+.center p{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight:400;
+}
+.img{
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 100px;
+    border: 5px solid  rgb(24, 223, 209);
+    /* transition: all 0.5s linear; */
+}
+
+.img img{
+    border: 5px solid  rgb(6, 16, 39) ;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0s linear;
+}
+
+.img img:hover{
+    box-shadow: 0px 0px 20px 1px rgb(185, 183, 183);
+}
+
+
+@media(max-width:576px){
+    .img{
+        margin-left:0px;
+    }
+}
+
+@media(max-width:992px){
+    .img{
+        margin-right: 30px;
+    }
+}
+
+.down{
+display: inline-block;
+margin-top: 20px;
+width: 100px;
+height: 80px;
+}
+
+.down a{
+    position: relative;
+    color: rgb(24, 223, 209);
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid rgb(24, 223, 209);
+    overflow: hidden;
+}
+
+.down a::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: rgb(24, 223, 209);
+    background-color: aqua;
+    z-index: -1;
+    transition:  all .9s;
+    border-radius: 5px;
+}
+.down a:hover{
+    color: rgb(6, 16, 39);
+}
+
+.down a:hover::before{
+     width: 100%;
+}
+
+.logo{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo a{
+    color: rgb(16, 15, 15);
+    display: inline-block;
+    position: relative;
+}
+
+.fa-brands{
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50px;
+    color: rgb(24, 223, 209);
+    text-align: center;
+    border: 2px solid rgb(24, 223, 209);
+    position: relative;
+}
+
+.fa-brands:hover{
+    color: rgb(16, 15, 15);
+}
+
+.logo a::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0;
+    height: 100%;
+    background-color: aqua;
+    border-radius: 50px;
+    z-index: -1;
+    transition:  all .9s;
+}
+
+#navbarNav a:active{
+    color: rgb(24, 223, 209) !important ;
+}
+
+#navbarNav  a:focus{
+    color: white;
+    font-size: 20px;
+}
+
+.logo a:hover::before{
+    width:100% ;
+}
+
+#check{
+    display:none;
+}
+
+#check:checked ~ .img #im{
+    width: 350px;
+    height: 350px;
+}
+
+#About{
+    height: 100vh;
+    color: white;
+    position: relative;
+}
+
+#About div{
+    position: absolute;
+    top: 150px;
+}
+
+#About h1{
+    font-size: 80px;
+    color:rgb(24, 223, 209) ;
+    font-weight: 700;
+    padding-top: 30px;
+}
+#About p{
+    position: relative;
+    top: 50px;
+    font-size: 28px;
+}
+#About p::before{
+    content: '';
+    position: relative;   
+    top: 0;
+    margin-right: 15px;
+    left: 0;
+    width:5px;
+    height:3px;
+    border: 2px solid rgb(24, 223, 209);
+}
+
+@media(max-width:576px){
+    #About div{
+        margin-top: 80px;
+    }
+}
+
+#skill{
+    height: 80vh;
+    color: white;
+    position: relative;
+    top:10px;
+}
+
+
+#skill h1{
+    font-size: 80px;
+     margin-left:10px ;
+      font-weight: 700;
+     color: rgb(24, 223, 209);
+     position: relative;
+     bottom: 10px;
+}
+
+
+#skill h2{
+    margin-left: 10px;
+    font-size:35px;
+}
+
+#skill h2::before{
+    content: '';
+    position: relative;   
+    top: 0;
+    margin-right: 15px;
+    left: 0;
+    width:5px;
+    height:3px;
+    border: 2px solid rgb(24, 223, 209);
+}
+#skill ul{
+    margin-top: 30px;
+}
+
+#skill ul li{
+    font-size: 28px;
+    
+}
+
+@media (max-width:576px){
+    #About {
+    scroll-margin-top:-80px;
+}
+#home{
+    scroll-margin-top: 400px;
+}
+}
+
+#project{
+   
+    color: white;
+}
+
+#project h1{
+    font-size: 80px;
+    font-weight: 700;
+    color:rgb(24, 223, 209) ;
+    margin-bottom: 40px;
+}
+
+#project .pro{
+    width: 95%;
+}
+
+#project h2{
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+#project p{
+    font-size: 24px;
+     margin-bottom: 30px;
+}
+
+#project p::before{
+    content: '';
+    position: relative;   
+    top: 0;
+    margin-right: 15px;
+    left: 0;
+    width:5px;
+    height:3px;
+    border: 2px solid rgb(24, 223, 209);
+}
